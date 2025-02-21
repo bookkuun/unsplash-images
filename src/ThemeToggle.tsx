@@ -1,9 +1,12 @@
+import { Dispatch, SetStateAction } from "react";
 import { useGlobalContext } from "./context";
 import { BsFillSunFill, BsFillMoonFill } from "react-icons/bs";
 
 interface GlobalContextType {
   isDarkTheme: boolean;
   toggleDarkTheme: () => void;
+  searchTerm: string;
+  setSearchTerm: Dispatch<SetStateAction<string>>;
 }
 
 const ThemeToggle = () => {

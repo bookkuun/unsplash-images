@@ -55,7 +55,6 @@ const Gallery = () => {
   return (
     <section className="image-container">
       {results.map((item: ImageItem) => {
-        console.log(item);
         const url = item?.urls?.regular;
         return (
           <img
