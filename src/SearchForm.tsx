@@ -1,4 +1,10 @@
+import { Dispatch, SetStateAction } from "react";
+import { useGlobalContext } from "./context";
+
 const SearchForm = () => {
+  const { setSearchTerm } = useGlobalContext() as {
+    setSearchTerm: Dispatch<SetStateAction<string>>;
+  };
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const searchValue = e.currentTarget.elements.namedItem(
@@ -6,7 +12,7 @@ const SearchForm = () => {
     ) as HTMLInputElement;
 
     if (!searchValue || !searchValue.value) return;
-    console.log(searchValue.value);
+    setSearchTerm(searchValue.value);
   };
 
   return (
